@@ -185,6 +185,8 @@ stylesheet = [#'https://github.com/plotly/dash-app-stylesheets/blob/master/dash-
                 'https://codepen.io/chriddyp/pen/bWLwgP.css',
              'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap-grid.min.css']
 
+#server = flask.Flask(__name__)
+#server.secret_key = os.environ.get('secret_key', str(randint(0, 1000000)))
 app = dash.Dash(external_stylesheets=stylesheet)
 application = app.server
 
@@ -526,8 +528,9 @@ def update_output_div( n_clicks, c0, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c1
 
 
 if __name__ == '__main__':
-    application.run(debug=False, port=8080)
-    #app.run_server(port=8080)
+    #app.server.run(debug=True, threaded=True)
+    #application.run(debug=False, port=8080)
+    app.run_server(port=8080)
 
 
 # In[ ]:
