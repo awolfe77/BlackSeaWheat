@@ -7,7 +7,6 @@ cufflinks
 dash
 dash_table
 dash_auth
-dash_core
 dash_html
 dash_bootstrap_components
 plotly
